@@ -18,32 +18,6 @@ This repository contains a **custom PHP WordPress theme** built as a fast, local
 Same steps as above, just place `velovita-theme/` into:
 `wp-content/themes/`
 
----
-
-## WordPress Setup (Menus + Pages)
-
-### 1) Create pages
-Create these pages (Titles + slugs):
-- Home → `/` (set as homepage below)
-- Contact → `/contact`
-- Events → `/events` (optional; CPT archive works at `/events` already)
-
-### 2) Set homepage
-WP Admin → **Settings → Reading**:
-- “Your homepage displays” → **A static page**
-- Homepage → **Home**
-
-### 3) Create the Primary Menu
-WP Admin → **Appearance → Menus**
-- Create a menu named **Primary Menu**
-- Add items (example names matching the design):
-  - Home (`/`)
-  - Products (`#featured-products`) *(anchor section)*
-  - Events (`/events`)
-  - Contact (`/contact`)
-- Assign to **Primary Menu** location.
-
----
 
 ## Using the Events CPT
 
