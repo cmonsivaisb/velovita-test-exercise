@@ -1,0 +1,79 @@
+/* Theme overrides (kept stable) */
+
+/* Ensure nav links stay visible on hero */
+.vl-navbar .nav-link{ color: rgba(255,255,255,.92) !important; }
+.vl-navbar .navbar-toggler{ border:0; }
+
+/* Product images in cards */
+.vl-product-card img{
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+}
+
+
+/* Featured products grid safety */
+#featured-products .card{ border-radius: 1.25rem; overflow:hidden; }
+
+/* Navbar: transparent on Home at top, solid after scroll; solid on inner pages */
+.vl-navbar{
+  transition: background .25s ease, box-shadow .25s ease, backdrop-filter .25s ease;
+}
+
+/* Default (non-home) */
+body:not(.home):not(.front-page) .vl-navbar{
+  background: rgba(39,43,47,.92) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.22);
+}
+
+/* Home top */
+body.home .vl-navbar,
+body.front-page .vl-navbar{
+  background: transparent !important;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Solid state */
+.vl-navbar.vl-nav-solid{
+  background: rgba(39,43,47,.92) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.22);
+}
+
+/* Keep links readable over hero */
+.vl-navbar .nav-link{
+  color: rgba(255,255,255,.92) !important;
+  font-weight: 700;
+}
+
+/* Ensure navbar sits above hero video */
+.vl-navbar{ z-index: 1050; }
+
+/* Velovita dark gray on scroll */
+.vl-navbar.vl-nav-solid{
+  background: rgba(39,43,47,.92) !important; /* velovita-like dark gray */
+}
+
+/* FORCE: navbar always dark (no scroll dependency) */
+.vl-navbar{
+  background: rgba(39,43,47,.92) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.22);
+}
+body.home .vl-navbar,
+body.front-page .vl-navbar{
+  background: rgba(39,43,47,.92) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.22);
+}
+
+/* Prevent fixed navbar overlap on inner pages (e.g., Contact) */
+:root{ --vl-nav-h: 92px; }
+@media (max-width: 576px){ :root{ --vl-nav-h: 78px; } }
+
+/* Add top padding on all non-home pages since navbar is fixed-top */
+body:not(.home):not(.front-page){
+  padding-top: var(--vl-nav-h);
+}
